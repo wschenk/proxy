@@ -1,9 +1,9 @@
-name: Deploy Gemfilelock
+name: Build ghcr.io/wschenk/proxy
 
 on: push
 
 jobs:
-  gemfilelock:
+  proxy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
