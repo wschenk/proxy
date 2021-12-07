@@ -2,11 +2,12 @@ const http = require('http');
 const httpProxy = require('http-proxy');
 
 const remote = process.env.REMOTE_TARGET || "http://homepage.default.svc.cluster.local";
+const port = process.env.PORT || 3000;
 
-console.log( "Proxy starting up on port 3000" );
+console.log( `Proxy starting up on port ${port}` );
 console.log( `Proxing to ${remote}` );
 
 httpProxy.createProxyServer({
     target: remote,
     changeOrigin: true
-}).listen(3000);
+}).listen(port);
